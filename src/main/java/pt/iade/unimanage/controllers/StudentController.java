@@ -40,11 +40,7 @@ public class StudentController {
         }else{
             return new Response(number +" not found!", null);
         } 
-            
-        
-        
     }
-
 
     @PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
     public Student addStudent(@RequestBody Student student){
