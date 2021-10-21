@@ -1,4 +1,5 @@
 package pt.iade.unimanage.models;
+
 import java.time.LocalDate;
 
 public class Student {
@@ -8,8 +9,9 @@ public class Student {
     private String email;
     private char gender;
     private int number;
+
     public Student(String name, LocalDate birthDate,
-        char gender) {
+                   char gender) {
         this.name = name;
         this.birthDate = birthDate;
         this.gender = gender;
@@ -17,7 +19,7 @@ public class Student {
         nextNumber++;
         email = "";
     }
-    
+
     //public static int getNextNumber() { return nextNumber; }
     //public String getName() { return name; }
     //public void setName(String name) { this.name = name; }
@@ -27,39 +29,47 @@ public class Student {
     public static void setNextNumber(int nextNumber) {
         Student.nextNumber = nextNumber;
     }
-    public void setBirthDate(LocalDate birthDate) {
-        this.birthDate = birthDate;
-    }
+
     public String getEmail() {
         return email;
     }
+
     public void setEmail(String email) {
         this.email = email;
     }
+
     public char getGender() {
         return gender;
     }
+
     public void setGender(char gender) {
         this.gender = gender;
     }
+
     public int getNumber() {
         return number;
     }
+
     public void setNumber(int number) {
         this.number = number;
     }
+
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
+
     public LocalDate getBirthDate() {
         return birthDate;
     }
 
+    public void setBirthDate(LocalDate birthDate) {
+        this.birthDate = birthDate;
+    }
 
-    
-    
+
 }
 

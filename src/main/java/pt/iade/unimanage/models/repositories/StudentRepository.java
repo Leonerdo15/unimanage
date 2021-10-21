@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import pt.iade.unimanage.models.Student;
 
 public class StudentRepository {
-    private static ArrayList<Student> students = new ArrayList<Student>();
+    private static ArrayList<Student> students = new ArrayList<>();
 
     public static void populate() {
         Student s; // auxiliary variable
@@ -46,5 +46,4 @@ public class StudentRepository {
         students.add(student);
         return student ;
     }
-
 }
