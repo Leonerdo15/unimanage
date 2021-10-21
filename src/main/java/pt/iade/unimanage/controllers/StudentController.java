@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import pt.iade.unimanage.models.Student;
+import pt.iade.unimanage.models.exceptions.NotFoundException;
 import pt.iade.unimanage.models.repositories.StudentRepository;
 
 import java.util.ArrayList;
@@ -20,9 +21,14 @@ public class StudentController {
         return StudentRepository.getAllStudents();
     }
 
-    @GetMapping(path = "{number}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Student getStudent(@PathVariable("number") int number) {
-        return StudentRepository.getStudentByNumber(number);
+    @GetMapping(path = "{number}",
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    public Student getStudent(@PathVariable("number") int number)
+            throws NotFoundException {
+        logger.info("Sending student with number " + number);
+        Student student = StudentRepository.getStudentByNumber(number);
+        if (student != null) return student;
+        else throw new NotFoundException("" + number, "Student", "number");
     }
 
     @DeleteMapping(path = "{number}", produces = MediaType.APPLICATION_JSON_VALUE)
