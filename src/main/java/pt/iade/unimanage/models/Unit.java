@@ -17,10 +17,6 @@ public class Unit {
         nextId++;
     }
 
-    public int getNextId() {
-        return nextId;
-    }
-
     public int getId() {
         return id;
     }
