@@ -30,7 +30,14 @@ public class Student extends Person {
     }
 
     public Enrolment getEnrolmentByUnitId(int unitId) {
-        return enrolments.get(unitId);
+        Enrolment enrolment = null;
+        for (int i = 0; i < enrolments.size(); i++) {
+            if (enrolments.get(i).getUnit().getId() == unitId){
+                enrolment = enrolments.get(i);
+                break;
+            }
+        }
+        return enrolment;
     }
 
     @Override
