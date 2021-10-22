@@ -83,6 +83,8 @@ public class Student {
         enrolment.getUnit().getEnrolments().add(enrolment);
     }
 
-
+    public Enrolment getEnrolmentByUnitId(int unitId) {
+        return enrolments.get(unitId);
+    }
 }
 
