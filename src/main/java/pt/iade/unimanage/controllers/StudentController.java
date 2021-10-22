@@ -9,6 +9,7 @@ import pt.iade.unimanage.models.Student;
 import pt.iade.unimanage.models.Unit;
 import pt.iade.unimanage.models.exceptions.AlreadyExistsException;
 import pt.iade.unimanage.models.exceptions.NotFoundException;
+import pt.iade.unimanage.models.exceptions.Response;
 import pt.iade.unimanage.models.repositories.StudentRepository;
 import pt.iade.unimanage.models.repositories.UnitRepository;
 

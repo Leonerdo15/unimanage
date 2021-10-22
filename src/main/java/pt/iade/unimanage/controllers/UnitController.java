@@ -7,6 +7,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import pt.iade.unimanage.models.Unit;
 import pt.iade.unimanage.models.exceptions.NotFoundException;
+import pt.iade.unimanage.models.exceptions.Response;
 import pt.iade.unimanage.models.repositories.UnitRepository;
 
 import java.util.List;
