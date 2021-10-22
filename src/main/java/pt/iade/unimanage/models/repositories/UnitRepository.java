@@ -18,10 +18,12 @@ public class UnitRepository {
         units.add(new Unit("Projeto Mobile", 3));
     }
 
-    public static List<Unit> getUnits() { return units; }
+    public static List<Unit> getUnits() {
+        return units;
+    }
 
     public static Unit getUnit(int id) {
-        for (Unit unit: units)
+        for (Unit unit : units)
             if (unit.getId() == id)
                 return unit;
         return null;

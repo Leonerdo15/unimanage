@@ -1,9 +1,9 @@
 package pt.iade.unimanage.models.repositories;
 
+import pt.iade.unimanage.models.Student;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
-
-import pt.iade.unimanage.models.Student;
 
 public class StudentRepository {
     private static ArrayList<Student> students = new ArrayList<>();
@@ -18,20 +18,20 @@ public class StudentRepository {
         students.add(s);
     }
 
-    public static ArrayList<Student> getAllStudents(){
+    public static ArrayList<Student> getAllStudents() {
         return students;
     }
 
-    public static Student getStudentByNumber(int number){
-        for(int i = 0; i <= students.size(); i++){
-            if(students.get(i).getNumber() == number){
+    public static Student getStudentByNumber(int number) {
+        for (int i = 0; i <= students.size(); i++) {
+            if (students.get(i).getNumber() == number) {
                 return students.get(i);
             }
         }
         return null;
     }
 
-    public static boolean deleteStudent(int number){
+    public static boolean deleteStudent(int number) {
         return students.removeIf((s) -> s.getNumber() == number);
         //for(int i = 0; i <= students.size(); i++){
         //    if(students.get(i).getNumber() == number){
@@ -42,8 +42,8 @@ public class StudentRepository {
         //return false;
     }
 
-    public static Student addStudent(Student student){
+    public static Student addStudent(Student student) {
         students.add(student);
-        return student ;
+        return student;
     }
 }
