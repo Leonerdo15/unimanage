@@ -1,10 +1,13 @@
 package pt.iade.unimanage.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Student extends Person {
     private static int nextNumber = 1;
+    @JsonIgnoreProperties({"students"})
     private final ArrayList<Enrolment> enrolments;
     private int number = 0;
 
@@ -42,7 +45,7 @@ public class Student extends Person {
 
     @Override
     public String getReference() {
-        return null;
+        return "S" + number;
     }
 
     public int getNumber() {

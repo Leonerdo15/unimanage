@@ -1,5 +1,6 @@
 package pt.iade.unimanage.models.repositories;
 
+import pt.iade.unimanage.models.Student;
 import pt.iade.unimanage.models.Teacher;
 import pt.iade.unimanage.models.Unit;
 
@@ -24,7 +25,13 @@ public class TeacherRepository {
         return teachers.get(mecNumber).getUnits().add(unit);
     }
 
-    public static boolean removeUnitTeacher(int mecNumber, Unit unit){
-        return teachers.get(mecNumber).getUnits().remove(unit);
+    public static boolean removeUnitTeacher(int mecNumber, int unitNumber){
+        return teachers.get(mecNumber).remoUnit(unitNumber);
+    }
+
+
+    public static Teacher addTeacher(Teacher teacher) {
+        teachers.add(teacher);
+        return teacher;
     }
 }

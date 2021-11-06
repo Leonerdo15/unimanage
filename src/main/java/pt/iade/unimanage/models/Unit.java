@@ -1,5 +1,7 @@
 package pt.iade.unimanage.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.ArrayList;
 
 public class Unit {
@@ -7,6 +9,7 @@ public class Unit {
     private final int id;
     private final String name;
     private final int credits;
+    @JsonIgnoreProperties({"units"})
     private final ArrayList<Enrolment> enrolments;
 
     public Unit(String name, int credits) {

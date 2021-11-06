@@ -10,8 +10,8 @@ import pt.iade.unimanage.models.repositories.UnitRepository;
 public class UnimanageApplication {
 
 	public static void main(String[] args) {
-		StudentRepository.populate();
 		UnitRepository.populate();
+		StudentRepository.populate();
 		SpringApplication.run(UnimanageApplication.class, args);
 	}
 

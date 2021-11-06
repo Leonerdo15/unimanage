@@ -35,8 +35,21 @@ public class Teacher extends Person {
         this.units = units;
     }
 
+    public Unit getUnit(int num) {
+        return units.get(num);
+    }
+
+    public boolean remoUnit(int num) {
+        if (num > units.size()){
+            return false;
+        } else {
+            units.remove(num);
+            return true;
+        }
+    }
+
     @Override
     public String getReference() {
-        return null;
+        return "T"+ mecNumber;
     }
 }

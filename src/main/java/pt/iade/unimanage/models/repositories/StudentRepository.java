@@ -1,6 +1,8 @@
 package pt.iade.unimanage.models.repositories;
 
+import pt.iade.unimanage.models.Enrolment;
 import pt.iade.unimanage.models.Student;
+import pt.iade.unimanage.models.Unit;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -15,6 +17,7 @@ public class StudentRepository {
         students.add(s);
         students.add(new Student("Mary", LocalDate.parse("1999-12-23"), 'F'));
         s = new Student("James", LocalDate.parse("2001-07-02"), 'M');
+        s.enroll(new Enrolment(StudentRepository.getStudentByNumber(2), UnitRepository.getUnit(2), 12));
         students.add(s);
     }
 
@@ -23,9 +26,9 @@ public class StudentRepository {
     }
 
     public static Student getStudentByNumber(int number) {
-        for (int i = 0; i <= students.size(); i++) {
-            if (students.get(i).getNumber() == number) {
-                return students.get(i);
+        for (Student student : students) {
+            if (student.getNumber() == number) {
+                return student;
             }
         }
         return null;

@@ -35,19 +35,20 @@ public class TeacherController {
         else throw new NotFoundException("" + mecNumber, "teacher", "number");
     }
 
-    @DeleteMapping(path = "{mecNumber}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Response deleteStudent(@PathVariable("mecNumber") int mecNumber) {
+    @DeleteMapping(path = "teacher/{mecNumber}/unit/{unitNumber}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Response deleteUnitTeacher(@PathVariable("mecNumber") int mecNumber,
+                                      @PathVariable("unitNumber") int unitNumber) {
         logger.info("Deleting student with number " + mecNumber);
-        if (StudentRepository.deleteStudent(mecNumber)) {
-            return new Response(mecNumber + " was deleted", null);
+        if (TeacherRepository.removeUnitTeacher(mecNumber, unitNumber)) {
+            return new Response(unitNumber + " was deleted", null);
         } else {
-            return new Response(mecNumber + " not found!", null);
+            return new Response(unitNumber + " not found!", null);
         }
     }
 
     @PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Student addStudent(@RequestBody Student student) {
-        StudentRepository.addStudent(student);
-        return student;
+    public Teacher addTeacher(@RequestBody Teacher teacher) {
+        TeacherRepository.addTeacher(teacher);
+        return teacher;
     }
 }
